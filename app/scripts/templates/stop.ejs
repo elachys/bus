@@ -1,2 +1,12 @@
-<p>Your content here.</p>
-
+<ul data-role="listview" data-inset="true">
+<% _.forEach(arrivals, function(arrival){
+    %><li data-role="list-divider"><%=arrival.name%><span class="ui-li-count"><%=arrival.times.length%></span></li>
+    <% _.forEach(arrival.times, function(time){ %>
+        <li><h2 class="ui-li-heading"><%=time.destination%></h2>
+        <div class="ui-li-aside">
+            <p class="ui-li-desc"><%=time.time%></p>
+            <p class="ui-li-desc"><%=time.mins%> mins</p>
+        </div>
+    <% }); %>
+<% }); %>
+</ul>

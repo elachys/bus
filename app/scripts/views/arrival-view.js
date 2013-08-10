@@ -9,7 +9,7 @@ define([
     'use strict';
 
     var ArrivalView = Backbone.View.extend({
-        template: JST['app/scripts/templates/arrival.ejs']
+        template: JST['app/scripts/templates/arrival.ejs'],
     });
 
     return ArrivalView;

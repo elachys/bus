@@ -16,11 +16,13 @@ define([
         initialize: function(){
             this.options.arrivals = new ArrivalCollection();
             var self = this;
-            this.options.arrivals.fetch({data: {stopcode: this.options.stop}, reset: true, success: function(){ self.render(); }});
-
+            this.options.arrivals.fetch({data: {stopcode: this.options.stop}, reset: true, success: function(){ $.mobile.loading('hide'); self.render(); }});
         },
         render: function(){
-            console.log(this.options.arrivals);
+            var list = this.template({arrivals: this.options.arrivals.toJSON()});
+            console.log(list);
+            this.$el.append(list).trigger('create');
+            return this;
         }
     });
 
