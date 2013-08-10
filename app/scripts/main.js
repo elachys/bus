@@ -27,8 +27,11 @@ require.config({
     }
 });
 
-require([
-    'backbone', 'jquerymobile'
-], function (Backbone) {
-    Backbone.history.start();
+require(['jquery', 'backbone', 'routes/app-router', 'jquerymobile'], function($, Backbone, AppRouter){
+    // Prevents all anchor click handling
+    $.mobile.linkBindingEnabled = false;
+    // Disabling this will prevent jQuery Mobile from handling hash changes
+    $.mobile.hashListeningEnabled = false;
+
+    Backbone.router = new AppRouter();
 });

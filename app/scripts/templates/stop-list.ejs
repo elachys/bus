@@ -1,0 +1,5 @@
+<ul data-role="listview" data-inset="true">
+<% _.forEach(stops, function(stop){
+    %><li><a href="#stop?<%=stop.code%>"><%=stop.name%></a></li>
+<% }); %>
+</ul>

@@ -6,10 +6,10 @@ define([
 ], function (_, Backbone) {
     'use strict';
 
-    var BackboneModelModel = Backbone.Model.extend({
+    var StopModel = Backbone.Model.extend({
         defaults: {
         }
     });
 
-    return BackboneModelModel;
+    return StopModel;
 });
