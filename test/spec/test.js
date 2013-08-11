@@ -1,3 +1,4 @@
+console.log('hello world');
 /*global describe, it */
 'use strict';
 (function () {
@@ -6,6 +7,8 @@
             it('should run here few assertions', function () {
 
             });
+            it('should do another thing');
+            it('should do thing');
         });
     });
 })();

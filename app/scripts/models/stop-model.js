@@ -1,5 +1,4 @@
 /*global define*/
-
 define([
     'underscore',
     'backbone'
@@ -8,8 +7,9 @@ define([
 
     var StopModel = Backbone.Model.extend({
         defaults: {
+            'name': '',
+            'times': []
         }
     });
-
     return StopModel;
 });

@@ -8,6 +8,7 @@ define([
 
     var ArrivalModel = Backbone.Model.extend({
         defaults: {
+            name: ''
         }
     });
 

@@ -12,7 +12,7 @@ define([
 
     var StopView = Backbone.View.extend({
         template: JST['app/scripts/templates/stop.ejs'],
-        el: '.ui-page-active .ui-content .buses',
+        el: '.ui-content .buses',
         initialize: function(){
             this.options.arrivals = new ArrivalCollection();
             var self = this;
@@ -20,7 +20,7 @@ define([
         },
         render: function(){
             var list = this.template({arrivals: this.options.arrivals.toJSON()});
-            this.$el.append(list).trigger('create');
+            this.$el.empty().append(list).trigger('create');
             return this;
         }
     });

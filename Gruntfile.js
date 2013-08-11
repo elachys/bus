@@ -67,6 +67,7 @@ module.exports = function (grunt) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
+                            //mountFolder(connect, 'test'),
                             mountFolder(connect, yeomanConfig.app)
                         ];
                     }
@@ -116,7 +117,9 @@ module.exports = function (grunt) {
         mocha: {
             all: {
                 options: {
-                    run: true,
+                    log: true,
+                    reporter: 'Nyan',
+                    run: false,
                     urls: ['http://localhost:<%= connect.options.port %>/index.html']
                 }
             }
