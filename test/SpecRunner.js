@@ -1,3 +1,5 @@
+/*global mocha */
+'use strict';
 require.config({
     shim: {
         underscore: {
@@ -24,8 +26,11 @@ require.config({
     }
 });
 
-require(['jquery', 'backbone', 'jquerymobile'], function($, Backbone, jqmobile){
-    require(['spec/models/stop_spec'], function(spec){
-      mocha.run();
+require(['jquery', 'backbone', 'jquerymobile'], function(){
+    require([
+        'spec/models/stop_spec',
+        'spec/views/app_spec'
+    ], function(){
+        mocha.run();
     });
 });

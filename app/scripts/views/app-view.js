@@ -39,6 +39,7 @@ define([
             var view = new StopListView({ collection:  data});
             this.$el.find('.stoplist').empty().append(view.render().el);
             $.mobile.loading('hide');
+            return this;
         }
 
     });
