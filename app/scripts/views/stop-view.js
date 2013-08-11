@@ -20,7 +20,6 @@ define([
         },
         render: function(){
             var list = this.template({arrivals: this.options.arrivals.toJSON()});
-            console.log(list);
             this.$el.append(list).trigger('create');
             return this;
         }
