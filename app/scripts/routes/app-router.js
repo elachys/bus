@@ -20,7 +20,7 @@ define([
 
         },
         stop: function(stop){
-            $.mobile.changePage('#stop');
+            $.mobile.changePage('#stop', { reverse: false, changeHash: false });
             $.mobile.loading('show');
             new StopView({stop:stop});
         },

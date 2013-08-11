@@ -27,7 +27,7 @@ require.config({
     }
 });
 
-require(['jquery', 'backbone', 'routes/app-router', 'jquerymobile'], function($, Backbone, AppRouter){
+require(['jquery', 'backbone', 'jquerymobile', 'routes/app-router'], function($, Backbone, jqmobile, AppRouter){
     // Prevents all anchor click handling
     $.mobile.linkBindingEnabled = false;
     // Disabling this will prevent jQuery Mobile from handling hash changes
