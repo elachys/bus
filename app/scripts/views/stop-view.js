@@ -9,7 +9,6 @@ define([
     'collections/arrival-collection',
 ], function ($, _, Backbone, JST, ArrivalView, ArrivalCollection) {
     'use strict';
-
     var StopView = Backbone.View.extend({
         template: JST['app/scripts/templates/stop.ejs'],
         el: '.ui-content .buses',

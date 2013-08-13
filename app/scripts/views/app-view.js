@@ -13,35 +13,37 @@ define([
     var AppView = Backbone.View.extend({
         template: JST['app/scripts/templates/app.ejs'],
         el: '.ui-page-active .ui-content',
-        searchSubmit: function(e){
+        events: {
+            'submit #search-form': 'search'
+        },
+        search: function(e){
             e.preventDefault();
             window.location = '/#stop?' + $('#search').val();
         },
         fetchStopsByGeo: function(geo, callback){
-            var stops = new StopCollection({geo:this.options.geo});
+            var stops = new StopCollection({geo:geo});
             stops.fetch({data: geo, reset: true, success: function(){
                 callback(stops);
             }});
         },
+        showStops: function(data){
+            var view = new StopListView({ collection:  data});
+            this.$el.find('.stoplist').empty().append(view.render().el);
+        },
         initialize: function(){
             $.mobile.loading('show');
-            $('#search-form').on('submit', this.searchSubmit);
-            if(!(this.options && this.options.geo)){
-                this.options.geo = false;
-            }
             var self = this;
             this.fetchStopsByGeo(
                 this.options.geo,
-                function(data){ $.mobile.loading('hide'); self.render(data); }
+                function(data){
+                    $.mobile.loading('hide');
+                    self.showStops(data);
+                }
             );
         },
-        render: function(data){
-            var view = new StopListView({ collection:  data});
-            this.$el.find('.stoplist').empty().append(view.render().el);
-            $.mobile.loading('hide');
+        render: function(){
             return this;
         }
-
     });
     return AppView;
 });
