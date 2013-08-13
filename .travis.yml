@@ -7,4 +7,4 @@ script:
     # We want to gate on passing tests and a successful build
     - bower install
     - cp -R bower_components app/
-    - grunt test
+    - grunt test --verbose
