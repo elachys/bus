@@ -10,5 +10,5 @@ before_script:
 script:
     # We want to gate on passing tests and a successful build
     - bower install
-    - cp components ./app/bower_components
+    - cp ./app/components ./app/bower_components
     - grunt test
