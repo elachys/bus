@@ -9,4 +9,4 @@ script:
     - gem update --system && gem install compass
     - bower install
     - cp -R bower_components app/
-    - /usr/local/share/npm/bin/grunt test --verbose
+    - grunt test --verbose
