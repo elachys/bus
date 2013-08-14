@@ -6,7 +6,7 @@ node_js:
     - 0.10
 script:
     # We want to gate on passing tests and a successful build
-    - gem update --system && gem install compass
+    - gem install compass
     - bower install
     - cp -R bower_components app/
     - grunt test --verbose
