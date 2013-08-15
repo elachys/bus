@@ -2,7 +2,6 @@
   "name": "busbackbone",
   "version": "0.0.0",
   "dependencies": {
-    "grunt-exec": "~0.4.2",
     "grunt-cli": "~0.1.9",
     "compass": "~0.1.0"
   },
@@ -28,8 +27,7 @@
     "grunt-rev": "~0.1.0",
     "grunt-open": "~0.2.0",
     "matchdep": "~0.1.2",
-    "connect-livereload": "~0.2.0",
-    "yeoman": "~0.9.1"
+    "connect-livereload": "~0.2.0"
   },
   "engines": {
     "node": ">=0.8.0"
