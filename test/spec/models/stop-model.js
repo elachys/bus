@@ -13,7 +13,7 @@ define(function(require) {
                     expect(emptyBusStop.get('name')).to.be.a('string');
                 });
                 it('should default to an empty name', function () {
-                    expect(emptyBusStop.get('name')).to.contain('');
+                    expect(emptyBusStop.get('name')).to.contain('anything');
                 });
             });
         });
